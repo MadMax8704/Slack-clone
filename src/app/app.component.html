@@ -1,0 +1,41 @@
+<mat-drawer-container class="mat-drawer-container" autosize>
+  <mat-drawer #drawer class="sidenav" [opened]="true" mode="side">
+    <div class="icon-container">
+      <img src="/assets/img/ico/slack.png" alt="">
+      <p>Slack Clone</p>      
+    </div>
+    
+      <mat-accordion>
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Channels
+            </mat-panel-title>
+            
+          </mat-expansion-panel-header>
+          <p>This is the primary content of the panel.</p>
+        </mat-expansion-panel>
+      </mat-accordion>
+      <mat-accordion>
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Direct messages
+            </mat-panel-title>
+            
+          </mat-expansion-panel-header>
+          <p>This is the primary content of the panel.</p>
+        </mat-expansion-panel>
+      </mat-accordion>    
+  </mat-drawer>
+  <div>
+    <mat-toolbar color="primary">
+      <mat-toolbar-row>
+        <mat-icon class="menu-icon" mat-button (click)="drawer.toggle()">menu</mat-icon>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <div class="content-container">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</mat-drawer-container>
