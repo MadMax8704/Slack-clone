@@ -1,7 +1,24 @@
 .sidenav {
     width: 30%;
-    
     background-color: gray;
+}
+
+.icon-container {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background-color: #673AB7;
+    height: 64px;
+
+    img {
+        width: 40px;
+        height: 40px;
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+    p{
+        margin: 0;
+    }
 }
 
 .mat-drawer-container {
