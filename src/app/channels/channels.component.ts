@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Channels } from 'src/models/channels';
 
 @Component({
   selector: 'app-channels',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChannelsComponent implements OnInit {
 
-  constructor() { }
+  constructor(public firestore: AngularFirestore) { }
+  
+  newChannel() {
+    let channels = new Channels();
+    this
+      .firestore
+      .collection('channels')
+      .add(channels.toJson())
 
-  ngOnInit(): void {
   }
+  ngOnInit(): void {
 
+  }
 }
