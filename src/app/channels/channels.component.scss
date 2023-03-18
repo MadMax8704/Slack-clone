@@ -1,0 +1,17 @@
+.mat-expansion-panel {
+    border-radius: 0px !important;
+    box-shadow: none;
+    background-color: transparent;
+
+   
+}
+
+.mat-expansion-panel-header {
+    &:hover {
+        background: none !important;
+    }
+}
+
+.mat-expansion-panel-header-title {
+    color: rgb(255 255 255);
+}

@@ -32,28 +32,10 @@ background: linear-gradient(90deg, rgba(85,4,81,1) 59%, rgba(46,13,44,1) 100%);
     height: 100vh;
 }
 
-.mat-accordion {
-    
-}
-
-.mat-expansion-panel {
-    border-radius: 0px !important;
-    box-shadow: none;
-   background-color: transparent;
-  
- 
-}
-
-.mat-expansion-panel-header {
-    &:hover {
-        background: none !important;
-       }
-}
-
-.mat-expansion-panel-header-title {
-    color: rgb(255 255 255);
-}
-
 .mat-drawer-side {
     border-right: none;
+}
+
+.mat-icon {
+    cursor: pointer;
 }

@@ -9,13 +9,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatExpansionModule } from '@angular/material/expansion';
-
+import { ChannelsComponent } from './channels/channels.component';
+import { DirectMessagesComponent } from './direct-messages/direct-messages.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageComponent,
-    LogInComponent
+    LogInComponent,
+    ChannelsComponent,
+    DirectMessagesComponent
   ],
   imports: [
     BrowserModule,

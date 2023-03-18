@@ -4,29 +4,8 @@
       <img src="/assets/img/ico/slack.png" alt="">
       <p>Slack Clone</p>      
     </div>
-    
-      <mat-accordion>
-        <mat-expansion-panel hideToggle>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              Channels
-            </mat-panel-title>
-            
-          </mat-expansion-panel-header>
-          <p>This is the primary content of the panel.</p>
-        </mat-expansion-panel>
-      </mat-accordion>
-      <mat-accordion>
-        <mat-expansion-panel hideToggle>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              Direct messages
-            </mat-panel-title>
-            
-          </mat-expansion-panel-header>
-          <p>This is the primary content of the panel.</p>
-        </mat-expansion-panel>
-      </mat-accordion>    
+      <app-channels></app-channels>
+      <app-direct-messages></app-direct-messages>
   </mat-drawer>
   <div>
     <mat-toolbar color="primary">
