@@ -6,6 +6,9 @@
             </mat-panel-title>
 
         </mat-expansion-panel-header>
-        <p (click)="newChannel()">Create channel</p>
+        <ul>
+            <li *ngFor="let channel of channelsOverview">{{ channel.channelName }}</li>
+        </ul>
+        <p (click)="openDialog()">Create channel</p>
     </mat-expansion-panel>
 </mat-accordion>
