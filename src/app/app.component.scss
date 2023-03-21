@@ -39,3 +39,16 @@ background: linear-gradient(90deg, rgba(85,4,81,1) 59%, rgba(46,13,44,1) 100%);
 .mat-icon {
     cursor: pointer;
 }
+
+.channel-name {
+    width: 100%;
+    padding-left: 1rem;
+    padding-top: 1rem;
+}
+
+.chat-container {
+    padding-left: 1rem;
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+}

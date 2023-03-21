@@ -14,10 +14,12 @@
       </mat-toolbar-row>
     </mat-toolbar>
     <div class="content-container">
-      <div>channelName</div>
-      <app-message-box></app-message-box>
-      <app-message-input></app-message-input>
-      <router-outlet></router-outlet>
+      <div class="channel-name"><h1>channelName</h1></div>
+      <div class="chat-container">
+        <app-message-box></app-message-box>
+        <app-message-input></app-message-input>
+        <router-outlet></router-outlet>
+      </div>
 
     </div>
   </div>
