@@ -24,6 +24,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MessageBoxComponent } from './message-box/message-box.component';
 import { MessageInputComponent } from './message-input/message-input.component';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { MessageInputComponent } from './message-input/message-input.component';
     FormsModule,
     MatInputModule,
     MatButtonModule,
+    MatCardModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
