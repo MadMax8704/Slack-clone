@@ -6,6 +6,6 @@
   </mat-form-field>
 </div>
 <div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">Close</button>
-  <button mat-button [mat-dialog-close]="channelName" cdkFocusInitial >Create</button>
+  <button mat-flat-button (click)="onNoClick()" color="warn">Close</button>
+  <button mat-flat-button [mat-dialog-close]="channelName" cdkFocusInitial [disabled]="this.channelName.length == 0">Create</button>
 </div>

@@ -2,11 +2,12 @@
     border-radius: 0px !important;
     box-shadow: none;
     background-color: transparent;
-
-   
+    padding-bottom: 0;
+    transition: 225ms ease-in-out;
 }
 
 .mat-expansion-panel-header {
+    width: fit-content;
     &:hover {
         background: none !important;
     }
@@ -14,4 +15,61 @@
 
 .mat-expansion-panel-header-title {
     color: rgb(255 255 255);
+}
+
+mat-panel-title {
+    padding: 5px;
+    &:hover {
+       filter: brightness(0.8);
+    }
+    img {
+        height: 11px;
+        width: 11px;
+        margin-right: 10px;
+        margin-top: 4px;
+        
+    }
+}
+
+ul {
+    color: white;
+    padding-left: 0;
+    margin: 0;
+
+    li {
+        list-style: none;
+        cursor: pointer;
+        // width: fit-content;
+        display: flex;
+        align-items: center;
+        height: 17px;
+        margin: 5px;
+        padding: 5px;
+        // margin-left: 0px;
+        &:hover {
+           background-color: rgb(255, 255, 255, 0.2);
+           border-radius: 5px;
+        }
+
+        div {
+            margin-right: 10px;
+        }
+
+
+        .plusIcon {
+            height: 13px;
+            width: 13px;
+            margin-right: 10px;
+            background-color: rgb(255, 255, 255, 0.2);
+            padding: 2px;
+            border-radius: 5px;
+        }
+    }
+
+    .createChannel {
+        &:hover {
+            background-color: unset;
+            filter: brightness(0.8);
+        }
+    }
 }

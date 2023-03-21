@@ -13,26 +13,14 @@ export class DialogNewChannelComponent implements OnInit {
   constructor(public firestore: AngularFirestore, public dialogRef: MatDialogRef<DialogNewChannelComponent>) { }
 
   public channels: Channels = new Channels;
-  channelName: string;
+  channelName: string = '';
   
-
 
   ngOnInit(): void {
   }
 
-
-    
-  // newChannel() {
-  //   let channels = new Channels(); 
-  //   this
-  //     .firestore
-  //     .collection('channels')
-  //     .add(channels.toJson())
-  // }
-
   onNoClick() {
     this.dialogRef.close();
   }
-
 
 }

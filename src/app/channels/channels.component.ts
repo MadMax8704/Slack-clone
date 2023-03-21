@@ -19,7 +19,8 @@ export class ChannelsComponent implements OnInit {
   channelsId: string = '';
   public channels: Channels = new Channels;
   channelsOverview = [];
-
+  panelOpenState = false;
+  
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogNewChannelComponent);
     dialogRef.afterClosed().subscribe(channelName => {
