@@ -22,6 +22,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { MessageBoxComponent } from './message-box/message-box.component';
+import { MessageInputComponent } from './message-input/message-input.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { MatButtonModule } from '@angular/material/button';
     LogInComponent,
     ChannelsComponent,
     DirectMessagesComponent,
-    DialogNewChannelComponent
+    DialogNewChannelComponent,
+    MessageBoxComponent,
+    MessageInputComponent
   ],
   imports: [
     BrowserModule,
