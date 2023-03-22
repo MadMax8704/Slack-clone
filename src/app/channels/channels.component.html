@@ -8,7 +8,7 @@
 
         </mat-expansion-panel-header>
         <ul>
-            <li *ngFor="let channel of channelsOverview"><div>#</div> {{ channel.channelName }}</li>
+            <li (click)="openChannel(channel.channelId)"  *ngFor="let channel of channelsOverview"><div>#</div> {{ channel.channelName }}</li>
             <li (click)="openDialog()" class="createChannel"><img src="../assets/img/plusIcon.svg" class="plusIcon"> Create channel</li>
         </ul>
         

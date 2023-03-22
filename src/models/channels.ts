@@ -1,6 +1,7 @@
 export class Channels {
     public message: string[] = [];
     public channelName: string[] = [];
+    public channelId: string []= [];
 
     constructor() {
     }
@@ -8,7 +9,8 @@ export class Channels {
     public toJson(){
         return {
             message: this.message,
-            channelName: this.channelName
+            channelName: this.channelName,
+            channelId: this.channelId
         };
     }
 }

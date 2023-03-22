@@ -20,7 +20,8 @@ export class ChannelsComponent implements OnInit {
   public channels: Channels = new Channels;
   channelsOverview = [];
   panelOpenState = false;
-  
+  id: string;
+
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogNewChannelComponent);
     dialogRef.afterClosed().subscribe(channelName => {
@@ -30,15 +31,36 @@ export class ChannelsComponent implements OnInit {
           .firestore
           .collection('channels')
           .add(this.channels.toJson())
+          .then((info: any) => {
+            this.channels.channelId = info.id;
+            this.id = info.id;
+            this.updateChannel();
+          })
       }
     })
   }
 
 
   ngOnInit(): void {
-    this.firestore.collection('channels').valueChanges().subscribe((channels: any) => {
-      this.channelsOverview = channels;
-      console.log(this.channelsOverview)
-    })
+    this.firestore
+      .collection('channels')
+      .valueChanges()
+      .subscribe((channels: any) => {
+        this.channelsOverview = channels;
+        // console.log(this.channelsOverview)
+      })
+  }
+
+  updateChannel() {
+    this.firestore
+    .collection('channels')
+    .doc(this.id)
+    .update(this.channels.toJson())
+  }
+
+  
+  openChannel(channelId) {
+    console.log(channelId)
+    // ROUTING TO CHANNEL ID AND OPEN CHAT!!!!
   }
 }

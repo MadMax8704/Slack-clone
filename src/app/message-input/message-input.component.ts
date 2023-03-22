@@ -12,4 +12,7 @@ export class MessageInputComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  //GET CHANNEL ID FROM URL AND THEN PUSH INPUT INTO CHANNELS.MESSAGES!!!
+
 }

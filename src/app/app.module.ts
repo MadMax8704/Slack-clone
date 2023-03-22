@@ -25,6 +25,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MessageBoxComponent } from './message-box/message-box.component';
 import { MessageInputComponent } from './message-input/message-input.component';
 import { MatCardModule } from '@angular/material/card';
+import { provideDatabase,getDatabase } from '@angular/fire/database';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { MatCardModule } from '@angular/material/card';
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
+    provideDatabase(() => getDatabase()),
 
   ],
   providers: [{ provide: FIREBASE_OPTIONS, useValue: environment.firebase }],
