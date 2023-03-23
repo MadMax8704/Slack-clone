@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { MatDialog } from '@angular/material/dialog';
-import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { Channels } from 'src/models/channels';
 import { DialogNewChannelComponent } from '../dialog-new-channel/dialog-new-channel.component';
 
@@ -13,7 +13,7 @@ import { DialogNewChannelComponent } from '../dialog-new-channel/dialog-new-chan
 })
 export class ChannelsComponent implements OnInit {
 
-  constructor(public firestore: AngularFirestore, public dialog: MatDialog, private route: ActivatedRoute) { }
+  constructor(public firestore: AngularFirestore, public dialog: MatDialog, private router : Router) { }
 
 
   channelsId: string = '';
@@ -61,6 +61,6 @@ export class ChannelsComponent implements OnInit {
   
   openChannel(channelId) {
     console.log(channelId)
-    // ROUTING TO CHANNEL ID AND OPEN CHAT!!!!
+      this.router.navigateByUrl('/channel/' + channelId)
   }
 }
