@@ -26,6 +26,12 @@ import { MessageBoxComponent } from './message-box/message-box.component';
 import { MessageInputComponent } from './message-input/message-input.component';
 import { MatCardModule } from '@angular/material/card';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { SignInComponent } from './components/sign-in/sign-in.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
+import { AuthService } from "./shared/services/auth.service";
 
 @NgModule({
   declarations: [
@@ -36,7 +42,12 @@ import { provideDatabase,getDatabase } from '@angular/fire/database';
     DirectMessagesComponent,
     DialogNewChannelComponent,
     MessageBoxComponent,
-    MessageInputComponent
+    MessageInputComponent,
+    DashboardComponent,
+    SignInComponent,
+    SignUpComponent,
+    ForgotPasswordComponent,
+    VerifyEmailComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +69,7 @@ import { provideDatabase,getDatabase } from '@angular/fire/database';
     provideDatabase(() => getDatabase()),
 
   ],
-  providers: [{ provide: FIREBASE_OPTIONS, useValue: environment.firebase }],
+  providers: [AuthService, { provide: FIREBASE_OPTIONS, useValue: environment.firebase }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

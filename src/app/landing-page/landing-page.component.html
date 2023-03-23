@@ -1,1 +1,26 @@
-<p>landing-page works!</p>
+<mat-drawer-container class="mat-drawer-container" autosize>
+    <mat-drawer #drawer class="sidenav" [opened]="true" mode="side">
+      <div class="icon-container">
+        <img src="/assets/img/ico/slack.png" alt="">
+        <p>Slack Clone</p>      
+      </div>
+        <app-channels></app-channels>
+        <app-direct-messages></app-direct-messages>
+    </mat-drawer>
+    <div>
+      <mat-toolbar color="primary">
+        <mat-toolbar-row>
+          <mat-icon class="menu-icon" mat-button (click)="drawer.toggle()">menu</mat-icon>
+        </mat-toolbar-row>
+      </mat-toolbar>
+      <div class="content-container">
+        <div class="channel-name"><h1>channelName</h1></div>
+        <div class="chat-container">
+          <app-message-box></app-message-box>
+          <!-- <router-outlet></router-outlet> -->
+        </div>
+        <app-message-input></app-message-input>
+  
+      </div>
+    </div>
+  </mat-drawer-container>

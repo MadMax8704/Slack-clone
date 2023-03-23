@@ -14,7 +14,7 @@ export class MessageInputComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe((params: any) => {
-      console.log(this.route)
+      console.log('activatedRouteID' , this.route)
     })
   }
 

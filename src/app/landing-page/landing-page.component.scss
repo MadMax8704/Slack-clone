@@ -1,0 +1,58 @@
+.sidenav {
+    width: 30%;
+    background: rgb(46,13,44);
+    background: linear-gradient(90deg, rgba(46,13,44,1) 0%, rgba(85,4,81,1) 41%);
+}
+
+.mat-toolbar {
+    background: rgb(85,4,81);
+background: linear-gradient(90deg, rgba(85,4,81,1) 59%, rgba(46,13,44,1) 100%);
+}
+
+.icon-container {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background: rgb(46,13,44);
+    background: linear-gradient(90deg, rgba(46,13,44,1) 0%, rgba(85,4,81,1) 41%);
+    height: 64px;
+
+    img {
+        width: 40px;
+        height: 40px;
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+    p{
+        margin: 0;
+    }
+}
+
+.mat-drawer-container {
+    height: 100vh;
+}
+
+.mat-drawer-side {
+    border-right: none;
+}
+
+.mat-icon {
+    cursor: pointer;
+}
+
+.content-container {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.channel-name {
+    width: 100%;
+    padding-top: 1rem;
+}
+
+.chat-container {
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    height: 40vh;
+}
