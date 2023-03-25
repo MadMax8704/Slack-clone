@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { MatDialog } from '@angular/material/dialog';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Channels } from 'src/models/channels';
 import { DialogNewChannelComponent } from '../dialog-new-channel/dialog-new-channel.component';
 
@@ -13,7 +13,7 @@ import { DialogNewChannelComponent } from '../dialog-new-channel/dialog-new-chan
 })
 export class ChannelsComponent implements OnInit {
 
-  constructor(public firestore: AngularFirestore, public dialog: MatDialog, private router : Router) { }
+  constructor(public firestore: AngularFirestore, public dialog: MatDialog, private router: Router, private route: ActivatedRoute) { }
 
 
   channelsId: string = '';
@@ -47,20 +47,18 @@ export class ChannelsComponent implements OnInit {
       .valueChanges()
       .subscribe((channels: any) => {
         this.channelsOverview = channels;
-        // console.log(this.channelsOverview)
       })
   }
 
   updateChannel() {
     this.firestore
-    .collection('channels')
-    .doc(this.id)
-    .update(this.channels.toJson())
+      .collection('channels')
+      .doc(this.id)
+      .update(this.channels.toJson())
   }
 
-  
+
   openChannel(channelId) {
-    console.log(channelId)
-      this.router.navigateByUrl('/channel/' + channelId)
+    this.router.navigateByUrl('/channel/' + channelId);
   }
 }
