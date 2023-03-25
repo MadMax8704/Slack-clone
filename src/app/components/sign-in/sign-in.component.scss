@@ -1,0 +1,73 @@
+.displayTable {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background-color: #541554;
+}
+
+.displayTableCell {
+    width: 50%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.display-img {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+        max-width: 500px;
+        width: 100%;
+    }
+}
+
+.authBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50%;
+    width: 100%;
+    h1 {
+        color: white;
+        font-size: 5rem;
+        height: 6rem;
+        line-height: 100px;
+    }
+}
+
+.formGroup {
+    padding-bottom: 0.5rem;
+    input {
+        height: 2rem;
+        font-size: 1rem;
+    }
+}
+
+.forgotPassword {
+    span {
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.redirect { 
+        &:hover {
+            cursor: pointer;
+        }   
+}
+
+span {
+    color: white;
+}
+
+.btn {
+    &:hover {
+        cursor: pointer;
+    }
+}
