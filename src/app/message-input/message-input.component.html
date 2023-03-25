@@ -1,4 +1,4 @@
 <mat-form-field appearance="outline">
-    <textarea matInput placeholder="Insert text here ..."></textarea>
+    <textarea [(ngModel)]="message" matInput placeholder="Insert text here ..."></textarea>
 </mat-form-field>
 <button mat-raised-button (click)="sendMessage()">Post</button>
