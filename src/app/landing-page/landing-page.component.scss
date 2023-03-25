@@ -56,3 +56,21 @@ background: linear-gradient(90deg, rgba(85,4,81,1) 59%, rgba(46,13,44,1) 100%);
     flex-direction: column;
     height: 40vh;
 }
+
+mat-toolbar-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.user {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    img {
+        width: 30px;
+        height: 30px;
+        border-radius: 100%;
+        margin-left: 0.5rem;
+    }
+}

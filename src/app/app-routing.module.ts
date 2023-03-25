@@ -11,6 +11,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 
 const routes: Routes = [
   { path: 'channel/:id', component: LandingPageComponent},
+  { path: 'channel/:id', component: LandingPageComponent},
   { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
   { path: 'sign-in', component: SignInComponent },
   { path: 'register-user', component: SignUpComponent },
