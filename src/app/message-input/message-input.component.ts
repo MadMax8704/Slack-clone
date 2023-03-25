@@ -12,42 +12,45 @@ export class MessageInputComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, public firestore: AngularFirestore) { }
 
-  id;
+  id = '';
   public channels: Channels = new Channels;
-  message;
+  message = '';
 
   ngOnInit(): void {
     this.route.params.subscribe((params: any) => {
       this.id = params.id;
+      console.log(this.id)
     })
   }
 
 
-  loadChat() {
-    this.route.params.subscribe((params: any) => {
-      this.id = params.id;
-    })
-    this.firestore
-      .collection('channels')
-      .doc(this.id)
-      .valueChanges()
-      .subscribe((channels: any) => {
-        // this.channels.message = channels.message;
-        // this.channels.channelId = channels.channelId;
-        // this.channels.channelName = channels.channelName;
-      })
-  }
+  // loadChat() {
+  //   this.route.params.subscribe((params: any) => {
+  //     this.id = params.id;
+  //   })
+    // await this.firestore
+    //   .collection('channels')
+    //   .doc(this.id)
+    //   .valueChanges()
+    //   .subscribe((channels: any) => {
+    //     this.channels.message = channels.message;
+    //     this.channels.channelId = channels.channelId;
+    //     this.channels.channelName = channels.channelName;
+    //   })
+  // }
 
 
   sendMessage() {
-    this.loadChat();
     this.channels.message.push(this.message)
     this.firestore
       .collection('channels')
       .doc(this.id)
-      .update(this.channels.toJson())
+      .update(this.channels.messageToJson())
     this.message = '';
   }
+
+
+ 
 
 
 

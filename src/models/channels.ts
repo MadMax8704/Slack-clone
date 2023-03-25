@@ -13,4 +13,11 @@ export class Channels {
             channelId: this.channelId
         };
     }
+
+
+    public  messageToJson(){
+        return {
+            message: this.message,
+        };
+    }
 }

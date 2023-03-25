@@ -58,7 +58,17 @@ export class ChannelsComponent implements OnInit {
   }
 
 
-  openChannel(channelId) {
+  async openChannel(channelId) {
     this.router.navigateByUrl('/channel/' + channelId);
+    
+    await this.firestore
+      .collection('channels')
+      .doc(channelId)
+      .valueChanges()
+      .subscribe((channels: any) => {
+        this.channels.message = channels.message;
+        this.channels.channelId = channels.channelId;
+        this.channels.channelName = channels.channelName;
+      })
   }
 }
