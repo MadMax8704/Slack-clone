@@ -58,10 +58,10 @@ export class ChannelsComponent implements OnInit {
   }
 
 
-  async openChannel(channelId) {
+  openChannel(channelId) {
     this.router.navigateByUrl('/channel/' + channelId);
-    
-    await this.firestore
+
+    this.firestore
       .collection('channels')
       .doc(channelId)
       .valueChanges()

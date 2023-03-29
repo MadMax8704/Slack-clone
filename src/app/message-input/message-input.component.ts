@@ -19,25 +19,15 @@ export class MessageInputComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe((params: any) => {
       this.id = params.id;
-      console.log(this.id)
+      this.firestore
+        .collection('channels')
+        .doc(this.id)
+        .valueChanges()
+        .subscribe((channels: any) => {
+          this.channels.message = channels.message;
+        })
     })
   }
-
-
-  // loadChat() {
-  //   this.route.params.subscribe((params: any) => {
-  //     this.id = params.id;
-  //   })
-    // await this.firestore
-    //   .collection('channels')
-    //   .doc(this.id)
-    //   .valueChanges()
-    //   .subscribe((channels: any) => {
-    //     this.channels.message = channels.message;
-    //     this.channels.channelId = channels.channelId;
-    //     this.channels.channelName = channels.channelName;
-    //   })
-  // }
 
 
   sendMessage() {
@@ -48,15 +38,4 @@ export class MessageInputComponent implements OnInit {
       .update(this.channels.messageToJson())
     this.message = '';
   }
-
-
- 
-
-
-
-
-
-
-  //GET CHANNEL ID FROM URL AND THEN PUSH INPUT INTO CHANNELS.MESSAGES!!!
-
 }

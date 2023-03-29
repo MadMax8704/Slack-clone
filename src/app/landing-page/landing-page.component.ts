@@ -11,8 +11,5 @@ import { User } from '../shared/services/user';
 
 export class LandingPageComponent implements OnInit {
   constructor(public authService: AuthService) { }
-  ngOnInit(): void {
-
-  }
-
+  ngOnInit(): void { }
 }
