@@ -54,7 +54,7 @@ background: linear-gradient(90deg, rgba(85,4,81,1) 59%, rgba(46,13,44,1) 100%);
     padding-top: 1rem;
     display: flex;
     flex-direction: column;
-    height: 40vh;
+    min-height: 100vh;
 }
 
 mat-toolbar-row {
