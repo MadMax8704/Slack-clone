@@ -19,7 +19,7 @@ export class ChannelsComponent implements OnInit {
   channelsId: string = '';
   public channels: Channels = new Channels;
   channelsOverview = [];
-  panelOpenState = false;
+  panelOpenState = true;
   id: string;
 
   openDialog(): void {
