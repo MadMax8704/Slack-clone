@@ -27,10 +27,16 @@ export class MessageInputComponent implements OnInit {
         .valueChanges()
         .subscribe((channels: any) => {
           this.channels.message = channels.message;
+          if (channels.userName) {
+            this.channels.userName = channels.userName;
+            this.channels.userPhoto = channels.userPhoto;
+          }
+         
         })
     })
   }
 
+  
 
   sendMessage() {
     this.channels.message.push(this.message)
