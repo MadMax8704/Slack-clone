@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { AuthService } from '../shared/services/auth.service';
+import { Channels } from 'src/models/channels';
 import { User } from '../shared/services/user';
 
 @Component({
