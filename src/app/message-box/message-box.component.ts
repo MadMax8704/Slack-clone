@@ -14,8 +14,6 @@ export class MessageBoxComponent implements OnInit {
 
   id = '';
   public channels: Channels = new Channels;
-  userImg = '';
-  userName = '';
 
 
 
@@ -28,8 +26,10 @@ export class MessageBoxComponent implements OnInit {
         .valueChanges()
         .subscribe((channels: any) => {
           this.channels.message = channels.message;
+          this.channels.userName = channels.userName;
+          this.channels.userPhoto = channels.userPhoto;
         })
     })
   }
- 
 }
+

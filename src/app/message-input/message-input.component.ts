@@ -34,7 +34,8 @@ export class MessageInputComponent implements OnInit {
 
   sendMessage() {
     this.channels.message.push(this.message)
-    this.channels.uid.push(this.authService.userData.uid)
+    this.channels.userName.push(this.authService.userData.displayName)
+    this.channels.userPhoto.push(this.authService.userData.photoURL)
     this.firestore
       .collection('channels')
       .doc(this.id)

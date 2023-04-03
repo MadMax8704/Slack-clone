@@ -2,7 +2,8 @@ export class Channels {
     public message: string[] = [];
     public channelName: string[] = [];
     public channelId: string []= [];
-    public uid: string [] = [];
+    public userName: string [] = [];
+    public userPhoto: string [] = [];
 
     constructor() {
     }
@@ -19,7 +20,8 @@ export class Channels {
     public  messageToJson(){
         return {
             message: this.message,
-            uid: this.uid
+            userName: this.userName,
+            userPhoto: this.userPhoto
         };
     }
 }
