@@ -14,6 +14,8 @@ export class MessageBoxComponent implements OnInit {
 
   id = '';
   public channels: Channels = new Channels;
+  userImg = '';
+  userName = '';
 
 
 
@@ -29,5 +31,5 @@ export class MessageBoxComponent implements OnInit {
         })
     })
   }
-
+ 
 }

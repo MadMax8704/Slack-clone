@@ -14,7 +14,6 @@ export class DialogNewChannelComponent implements OnInit {
 
   public channels: Channels = new Channels;
   channelName: string = '';
-  
 
   ngOnInit(): void {
   }
@@ -22,5 +21,4 @@ export class DialogNewChannelComponent implements OnInit {
   onNoClick() {
     this.dialogRef.close();
   }
-
 }

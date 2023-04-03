@@ -26,6 +26,7 @@ export class ChannelsComponent implements OnInit {
     const dialogRef = this.dialog.open(DialogNewChannelComponent);
     dialogRef.afterClosed().subscribe(channelName => {
       if (channelName) {
+        this.channels.message = [];
         this.channels.channelName = channelName
         this
           .firestore
