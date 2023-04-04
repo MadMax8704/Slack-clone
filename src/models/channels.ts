@@ -1,10 +1,13 @@
+import { Thread } from "./thread";
+
 export class Channels {
     public message: string[] = [];
     public channelName: string[] = [];
     public channelId: string []= [];
     public userName: string [] = [];
     public userPhoto: string [] = [];
-    public thread: string [] = [];
+ 
+ 
     constructor() {
     }
 
@@ -22,7 +25,8 @@ export class Channels {
             message: this.message,
             userName: this.userName,
             userPhoto: this.userPhoto,
-            thread: this.thread
+            
         };
     }
+
 }

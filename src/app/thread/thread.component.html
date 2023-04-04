@@ -1,4 +1,4 @@
-<mat-card>
+<!-- <mat-card>
     <div class="card-header">
         <img src="{{ channels.userPhoto[0] }}" alt="">
         <span>{{ channels.userName[0] }}</span>
@@ -14,9 +14,9 @@
         </div>
         <mat-card-content>{{ channels.thread[i] }}</mat-card-content>
     </mat-card>
-</div>
+</div> -->
 
 <mat-form-field appearance="outline">
-    <textarea  matInput placeholder="Insert text here ..."></textarea>
+    <textarea  [(ngModel)]="message" matInput placeholder="Insert text here ..."></textarea>
 </mat-form-field>
-<button mat-raised-button (click)="loadThread()">Post</button>
+<button mat-raised-button (click)="sendAnswer()">Post</button>

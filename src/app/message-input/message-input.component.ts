@@ -26,8 +26,8 @@ export class MessageInputComponent implements OnInit {
         .doc(this.id)
         .valueChanges()
         .subscribe((channels: any) => {
-          this.channels.message = channels.message;
           if (channels.userName) {
+            this.channels.message = channels.message;
             this.channels.userName = channels.userName;
             this.channels.userPhoto = channels.userPhoto;
           }

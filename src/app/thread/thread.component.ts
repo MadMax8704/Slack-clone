@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Channels } from 'src/models/channels';
 import { ThreadService } from '../shared/services/thread.service';
 import { AuthService } from '../shared/services/auth.service';
+import { Thread } from 'src/models/thread';
 
 
 @Component({
@@ -13,8 +14,9 @@ import { AuthService } from '../shared/services/auth.service';
 })
 export class ThreadComponent {
   id = '';
-  thread : any = [];
+  message = '';
   public channels: Channels = new Channels;
+  public thread: Thread = new Thread;
 
   constructor(public authService: AuthService, public threadservice: ThreadService, private route: ActivatedRoute, public firestore: AngularFirestore) { }
 
@@ -29,18 +31,19 @@ export class ThreadComponent {
           this.channels.message = channels.message;
           this.channels.userName = channels.userName;
           this.channels.userPhoto = channels.userPhoto;
-          this.channels.thread = channels.thread;
+          this.thread = channels.thread;
         })
     })
   }
-  loadThread() {
-    this.channels.thread.push(this.thread)
-    this.channels.userName.push(this.authService.userData.displayName)
-    this.channels.userPhoto.push(this.authService.userData.photoURL)
+  sendAnswer() {
+    new Thread();
+    this.thread.message.push(this.message);
+    this.thread.userName.push(this.authService.userData.displayName);
+    this.thread.userPhoto.push(this.authService.userData.photoURL);
     this.firestore
       .collection('channels')
       .doc(this.id)
-      .update(this.channels.messageToJson())
-    this.thread = '';
+      .update(this.thread.toJson())
+    this.message = '';
   }
 }
