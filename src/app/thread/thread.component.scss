@@ -1,0 +1,23 @@
+.card-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 1px solid black;
+    img {
+        margin-bottom: 0.2rem;
+        width: 30px;
+        height: 30px;
+        border-radius: 100%;
+        margin-right: 1rem;
+    }
+}
+
+mat-card-content {
+    padding-top: 1rem;
+    padding-left: 0.5rem;
+}
+
+.message-box {
+    margin-bottom: 1rem;
+    margin-right: 0.5rem;
+}

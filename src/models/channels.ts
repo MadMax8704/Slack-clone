@@ -4,7 +4,7 @@ export class Channels {
     public channelId: string []= [];
     public userName: string [] = [];
     public userPhoto: string [] = [];
-
+    public thread: string [] = [];
     constructor() {
     }
 
@@ -21,7 +21,8 @@ export class Channels {
         return {
             message: this.message,
             userName: this.userName,
-            userPhoto: this.userPhoto
+            userPhoto: this.userPhoto,
+            thread: this.thread
         };
     }
 }

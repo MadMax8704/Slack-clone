@@ -1,10 +1,9 @@
-
-        <div class="message-box" *ngFor="let messages of channels.message; let i = index">
-            <mat-card>
-                <div class="card-header">
-                    <img src="{{ channels.userPhoto[i] }}" alt="">
-                    <span>{{ channels.userName[i] }}</span>
-                </div>
-                <mat-card-content>{{ channels.message[i] }}</mat-card-content>
-            </mat-card>
+<div class="message-box" *ngFor="let messages of channels.message; let i = index">
+    <mat-card>
+        <div class="card-header">
+            <img src="{{ channels.userPhoto[i] }}" alt="">
+            <span>{{ channels.userName[i] }}</span>
         </div>
+        <mat-card-content (click)="this.threadservice.openSidenav(i)">{{ channels.message[i] }}</mat-card-content>
+    </mat-card>
+</div>

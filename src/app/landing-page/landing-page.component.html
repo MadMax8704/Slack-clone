@@ -21,12 +21,11 @@
     <div class="content-container">
 
       <mat-drawer-container class="example-container" autosize>
-        <mat-drawer #thread_sidenav class="example-sidenav" position="end" mode="side" opened>
+        <mat-drawer #thread_sidenav [opened]="this.threadservice.open" class="example-sidenav" position="end"
+          mode="side">
 
           <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
-          <button (click)="showFiller = !showFiller" mat-raised-button>
-            Toggle extra text
-          </button>
+          <app-thread></app-thread>
         </mat-drawer>
 
         <div class="example-sidenav-content">
