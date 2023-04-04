@@ -1,17 +1,18 @@
-import { Thread } from "./thread";
-
 export class Channels {
     public message: string[] = [];
     public channelName: string[] = [];
-    public channelId: string []= [];
-    public userName: string [] = [];
-    public userPhoto: string [] = [];
- 
- 
+    public channelId: string[] = [];
+    public userName: string[] = [];
+    public userPhoto: string[] = [];
+    public threadMessage: string[] = [];
+    public threadUserName: string[] = [];
+    public threadUserPhoto: string[] = [];
+
+
     constructor() {
     }
 
-    public toJson(){
+    public toJson() {
         return {
             message: this.message,
             channelName: this.channelName,
@@ -20,12 +21,23 @@ export class Channels {
     }
 
 
-    public  messageToJson(){
+    public messageToJson() {
         return {
             message: this.message,
             userName: this.userName,
-            userPhoto: this.userPhoto,
-            
+            userPhoto: this.userPhoto
+        };
+    }
+
+    public threadToJson() {
+        return {
+            threads: {
+                thread: {
+                    threadMessage: this.threadMessage,
+                    threadUserName: this.threadUserName,
+                    threadUserPhoto: this.threadUserPhoto,
+                }
+            }
         };
     }
 

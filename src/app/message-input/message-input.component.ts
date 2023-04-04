@@ -31,7 +31,6 @@ export class MessageInputComponent implements OnInit {
             this.channels.userName = channels.userName;
             this.channels.userPhoto = channels.userPhoto;
           }
-         
         })
     })
   }
