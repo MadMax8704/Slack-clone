@@ -1,5 +1,5 @@
 mat-form-field {
-    width: 100%;
+    width: calc(100% - 0.5rem);
 
     textarea {
         resize: none;

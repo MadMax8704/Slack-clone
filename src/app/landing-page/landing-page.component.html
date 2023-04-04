@@ -19,14 +19,28 @@
       </mat-toolbar-row>
     </mat-toolbar>
     <div class="content-container">
-      <div class="channel-name">
-        <h1>channelName</h1>
-      </div>
-      <div class="chat-container">
 
-        <app-message-box></app-message-box>
-        
-      </div>
+      <mat-drawer-container class="example-container" autosize>
+        <mat-drawer #thread_sidenav class="example-sidenav" position="end" mode="side" opened>
+
+          <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+          <button (click)="showFiller = !showFiller" mat-raised-button>
+            Toggle extra text
+          </button>
+        </mat-drawer>
+
+        <div class="example-sidenav-content">
+          <div class="channel-name">
+            <h1>channelName</h1>
+          </div>
+          <div class="chat-container">
+            <app-message-box></app-message-box>
+          </div>
+          <app-message-input></app-message-input>
+        </div>
+
+      </mat-drawer-container>
+
 
     </div>
   </div>

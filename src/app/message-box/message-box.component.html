@@ -1,19 +1,4 @@
-<mat-drawer-container class="example-container">
-    <mat-drawer mode="side" position="end" opened>
-        <h1>Thread #Channel Name</h1>
-        
 
-        <mat-card>
-            <div class="card-header">
-                <img src="{{ channels.userPhoto[0] }}" alt="">
-                <span>{{ channels.userName[0] }}</span>
-            </div>
-            <mat-card-content>{{ channels.message[0] }}</mat-card-content>
-        </mat-card>
-
-    </mat-drawer>
-    
-    <mat-drawer-content>
         <div class="message-box" *ngFor="let messages of channels.message; let i = index">
             <mat-card>
                 <div class="card-header">
@@ -23,6 +8,3 @@
                 <mat-card-content>{{ channels.message[i] }}</mat-card-content>
             </mat-card>
         </div>
-        <app-message-input></app-message-input>
-    </mat-drawer-content>
-</mat-drawer-container>

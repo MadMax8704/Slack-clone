@@ -11,6 +11,7 @@ import { User } from '../shared/services/user';
 
 
 export class LandingPageComponent implements OnInit {
+  showFiller = false;
   constructor(public authService: AuthService) { }
   ngOnInit(): void { }
 }
