@@ -32,6 +32,7 @@ export class ThreadComponent {
           this.channels.userPhoto = channels.userPhoto;
         })
     })
+
   }
 
 
@@ -42,7 +43,7 @@ export class ThreadComponent {
     this.firestore
       .collection('channels')
       .doc(this.id)
-      .update(this.channels.threadToJson())
+      // .update()
     this.message = '';
   }
 }

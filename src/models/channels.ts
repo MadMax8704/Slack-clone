@@ -7,7 +7,7 @@ export class Channels {
     public threadMessage: string[] = [];
     public threadUserName: string[] = [];
     public threadUserPhoto: string[] = [];
-
+    public threadId: string[] = [];
 
     constructor() {
     }

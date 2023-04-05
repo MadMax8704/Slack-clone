@@ -1,19 +1,34 @@
 import { Injectable } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Thread } from 'src/models/thread';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ThreadService {
+  
+  constructor(public firestore: AngularFirestore) { }
+  public thread: Thread = new Thread;
+
   open = false;
+  tid = '';
+  i ;
+
   openSidenav(i) {
-    if (this.open) {
-      this.open = false;
-    } else {
-      this.open = true;
-    }
-
-    
-
+    this.open = true;
+    this.i = i;
   }
-  constructor() { }
+
+  makeThread() {
+    this.firestore
+    .collection('threads')
+          .add(this.thread.toJson())
+          .then((info: any) => {
+            console.log('ID thread', info.id)
+            this.tid = info.id;
+          });
+}
+
+
 }

@@ -61,7 +61,7 @@ export class ChannelsComponent implements OnInit {
 
   openChannel(channelId) {
     this.router.navigateByUrl('/channel/' + channelId);
-
+    this.channels.message = [];
     this.firestore
       .collection('channels')
       .doc(channelId)
