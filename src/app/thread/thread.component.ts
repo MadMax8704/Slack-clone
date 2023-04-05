@@ -16,6 +16,7 @@ export class ThreadComponent {
   id = '';
   message = '';
   public channels: Channels = new Channels;
+  public thread : Thread = new Thread;
 
   constructor(public authService: AuthService, public threadservice: ThreadService, private route: ActivatedRoute, public firestore: AngularFirestore) { }
 
@@ -37,13 +38,13 @@ export class ThreadComponent {
 
 
   sendAnswer() {
-    this.channels.threadMessage.push(this.message);
-    this.channels.threadUserName.push(this.authService.userData.displayName);
-    this.channels.threadUserPhoto.push(this.authService.userData.photoURL);
+    this.thread.message.push(this.message);
+    this.thread.userName.push(this.authService.userData.displayName);
+    this.thread.userPhoto.push(this.authService.userData.photoURL);
     this.firestore
-      .collection('channels')
-      .doc(this.id)
-      // .update()
+      .collection('threads')
+      .doc(this.threadservice.tid)
+      .update(this.thread.toJson())
     this.message = '';
   }
 }

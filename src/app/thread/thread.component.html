@@ -1,20 +1,13 @@
-<!-- <mat-card>
-    <div class="card-header">
-        <img src="{{ channels.userPhoto[0] }}" alt="">
-        <span>{{ channels.userName[0] }}</span>
-    </div>
-    <mat-card-content>{{ channels.message[0] }}</mat-card-content>
-</mat-card>
-<div class="message-box" *ngFor="let thread of channels.thread; let i = index">
+
+
 
     <mat-card>
         <div class="card-header">
-            <img src="{{ channels.userPhoto[i] }}" alt="">
-            <span>{{ channels.userName[i] }}</span>
+            <img src="{{ thread.userPhoto }}" alt="">
+            <span>{{ thread.userName }}</span>
         </div>
-        <mat-card-content>{{ channels.thread[i] }}</mat-card-content>
-    </mat-card>
-</div> -->
+        <mat-card-content>{{ thread.message }}</mat-card-content>
+
 
 <mat-form-field appearance="outline">
     <textarea  [(ngModel)]="message" matInput placeholder="Insert text here ..."></textarea>
