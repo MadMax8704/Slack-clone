@@ -1,15 +1,15 @@
-
-
-
+<div *ngFor="let thread of this.threadservice.message, let i = index ">
     <mat-card>
         <div class="card-header">
-            <img src="{{ thread.userPhoto }}" alt="">
-            <span>{{ thread.userName }}</span>
+            <img src="{{ this.threadservice.userPhoto[i] }}" alt="">
+            <span>{{ this.threadservice.userName[i] }}</span>
         </div>
-        <mat-card-content>{{ thread.message }}</mat-card-content>
+        <mat-card-content>{{ this.threadservice.message[i] }}</mat-card-content>
+    </mat-card>
+</div>
 
 
 <mat-form-field appearance="outline">
-    <textarea  [(ngModel)]="message" matInput placeholder="Insert text here ..."></textarea>
+    <textarea [(ngModel)]="message" matInput placeholder="Insert text here ..."></textarea>
 </mat-form-field>
 <button mat-raised-button (click)="sendAnswer()">Post</button>
