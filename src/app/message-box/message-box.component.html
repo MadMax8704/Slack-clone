@@ -4,6 +4,6 @@
             <img src="{{ channels.userPhoto[i] }}" alt="">
             <span>{{ channels.userName[i] }}</span>
         </div>
-        <mat-card-content (click)="this.threadservice.openSidenav(i)">{{ channels.message[i] }}</mat-card-content>
+        <mat-card-content (click)="this.threadservice.openSidenav(i, this.id)">{{ channels.message[i] }}</mat-card-content>
     </mat-card>
 </div>
