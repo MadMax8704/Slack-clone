@@ -31,13 +31,7 @@ export class Channels {
 
     public threadToJson() {
         return {
-            threads: {
-                thread: {
-                    threadMessage: this.threadMessage,
-                    threadUserName: this.threadUserName,
-                    threadUserPhoto: this.threadUserPhoto,
-                }
-            }
+            threadId: this.threadId
         };
     }
 

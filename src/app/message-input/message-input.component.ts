@@ -3,6 +3,9 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { ActivatedRoute } from '@angular/router';
 import { Channels } from 'src/models/channels';
 import { AuthService } from '../shared/services/auth.service';
+import { ThreadService } from '../shared/services/thread.service';
+import { Thread } from 'src/models/thread';
+import { collection } from 'firebase/firestore';
 
 @Component({
   selector: 'app-message-input',
@@ -11,10 +14,11 @@ import { AuthService } from '../shared/services/auth.service';
 })
 export class MessageInputComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, public firestore: AngularFirestore, public authService: AuthService) { }
+  constructor(private route: ActivatedRoute, public firestore: AngularFirestore, public authService: AuthService, public threadService: ThreadService) { }
 
   id = '';
   public channels: Channels = new Channels;
+  public thread: Thread = new Thread;
   message = '';
   uid = '';
 
@@ -30,6 +34,10 @@ export class MessageInputComponent implements OnInit {
             this.channels.message = channels.message;
             this.channels.userName = channels.userName;
             this.channels.userPhoto = channels.userPhoto;
+          } else {
+            this.channels.message = [];
+            this.channels.userName = [];
+            this.channels.userPhoto = [];
           }
         })
     })
@@ -45,6 +53,7 @@ export class MessageInputComponent implements OnInit {
       .collection('channels')
       .doc(this.id)
       .update(this.channels.messageToJson())
+    this.threadService.makeThread(this.message, this.authService.userData.displayName, this.authService.userData.photoURL, this.id);
     this.message = '';
   }
 }
