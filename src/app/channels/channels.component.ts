@@ -27,6 +27,7 @@ export class ChannelsComponent implements OnInit {
     dialogRef.afterClosed().subscribe(channelName => {
       if (channelName) {
         this.channels.message = [];
+  
         this.channels.channelName = channelName
         this
           .firestore
@@ -34,6 +35,7 @@ export class ChannelsComponent implements OnInit {
           .add(this.channels.toJson())
           .then((info: any) => {
             this.channels.channelId = info.id;
+           
             this.id = info.id;
             this.updateChannel();
           })
