@@ -16,7 +16,8 @@ export class Channels {
         return {
             message: this.message,
             channelName: this.channelName,
-            channelId: this.channelId
+            channelId: this.channelId,
+            threadId: this.threadId
         };
     }
 

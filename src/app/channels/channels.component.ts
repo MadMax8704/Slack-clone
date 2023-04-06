@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Channels } from 'src/models/channels';
 import { DialogNewChannelComponent } from '../dialog-new-channel/dialog-new-channel.component';
+import { ThreadService } from '../shared/services/thread.service';
 
 
 @Component({
@@ -13,7 +14,7 @@ import { DialogNewChannelComponent } from '../dialog-new-channel/dialog-new-chan
 })
 export class ChannelsComponent implements OnInit {
 
-  constructor(public firestore: AngularFirestore, public dialog: MatDialog, private router: Router, private route: ActivatedRoute) { }
+  constructor(public firestore: AngularFirestore, public dialog: MatDialog, private router: Router, public threadService: ThreadService) { }
 
 
   channelsId: string = '';
@@ -27,7 +28,6 @@ export class ChannelsComponent implements OnInit {
     dialogRef.afterClosed().subscribe(channelName => {
       if (channelName) {
         this.channels.message = [];
-  
         this.channels.channelName = channelName
         this
           .firestore
@@ -35,7 +35,6 @@ export class ChannelsComponent implements OnInit {
           .add(this.channels.toJson())
           .then((info: any) => {
             this.channels.channelId = info.id;
-           
             this.id = info.id;
             this.updateChannel();
           })
@@ -72,6 +71,7 @@ export class ChannelsComponent implements OnInit {
         this.channels.message = channels.message;
         this.channels.channelId = channels.channelId;
         this.channels.channelName = channels.channelName;
+        this.threadService.threadIds = channels.threadId;
       })
   }
 }

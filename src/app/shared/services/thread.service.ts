@@ -17,6 +17,7 @@ export class ThreadService {
   public message;
   public userName;
   public userPhoto;
+  public threadIds;
 
   open = false;
   tid = '';
@@ -25,24 +26,17 @@ export class ThreadService {
   openSidenav(i, channelId) {
     this.open = true;
     this.i = i;
-    this.channels.threadId = [];
-    console.log('before subscribe channels', this.channels.threadId)
     this.firestore
       .collection('channels')
       .doc(channelId)
       .valueChanges()
       .subscribe((channels: any) => {
         this.tid = channels.threadId[i];
-        console.log(this.tid)
-        this.channels.threadId = channels.threadId[i];
-        console.log('after subscribe channels', this.channels.threadId)
-        // this.threadComponent.loadThread(this.tid);
         this.firestore
           .collection('threads')
           .doc(this.tid)
           .valueChanges()
           .subscribe((thread: any) => {
-            console.log('service', thread)
             this.message = thread.message;
             this.userName = thread.userName;
             this.userPhoto = thread.userPhoto;
@@ -62,8 +56,8 @@ export class ThreadService {
       .collection('threads')
       .add(this.thread.toJson())
       .then((info: any) => {
-        console.log('ID thread', info.id)
         this.tid = info.id;
+        this.channels.threadId = this.threadIds;
         this.channels.threadId.push(this.tid);
         this.firestore
           .collection('channels')

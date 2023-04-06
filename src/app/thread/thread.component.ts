@@ -36,20 +36,6 @@ export class ThreadComponent {
     
   }
 
-  // loadThread(id) {
-  //   this.firestore
-  //       .collection('threads')
-  //       .doc(id)
-  //       .valueChanges()
-  //       .subscribe((thread: any) => {
-  //         console.log('thread', thread)
-  //         this.thread.message = thread.message;
-  //         this.thread.userName = thread.userName;
-  //         this.thread.userPhoto = thread.userPhoto;
-  //       })
-    
-  // }
-
 
   sendAnswer() {
     this.threadservice.message.push(this.message)
