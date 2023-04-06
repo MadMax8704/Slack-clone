@@ -1,3 +1,13 @@
+<div class="message-box">
+    <mat-card>
+        <div class="card-header">
+            <img src="{{ this.channels.userPhoto[this.threadservice.i] }}" alt="">
+            <span>{{ this.channels.userName[this.threadservice.i] }}</span>
+        </div>
+        <mat-card-content>{{ this.channels.message[this.threadservice.i] }}</mat-card-content>
+    </mat-card>
+</div>
+
 <div *ngFor="let thread of this.threadservice.message, let i = index ">
     <mat-card>
         <div class="card-header">
