@@ -1,4 +1,4 @@
 <mat-form-field appearance="outline">
-    <textarea [(ngModel)]="message" matInput placeholder="Insert text here ..."></textarea>
+    <textarea (keyup.enter)="sendMessage()" [(ngModel)]="message" matInput placeholder="Insert text here ..."></textarea>
+    <img class="send-button" src="../../assets/img/send.png" (click)="sendMessage()">
 </mat-form-field>
-<button mat-raised-button (click)="sendMessage()">Post</button>
