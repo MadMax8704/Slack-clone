@@ -21,3 +21,14 @@ mat-card-content {
     margin-bottom: 1rem;
     margin-right: 0.5rem;
 }
+
+.send-button {
+    width: 30px;
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+
+    &:hover {
+        cursor: pointer;
+    }
+}

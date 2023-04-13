@@ -20,6 +20,6 @@
 
 
 <mat-form-field appearance="outline">
-    <textarea [(ngModel)]="message" matInput placeholder="Insert text here ..."></textarea>
+    <textarea resize:none (keyup.enter)="sendAnswer()" [(ngModel)]="message" matInput placeholder="Insert text here ..."></textarea>
+    <img class="send-button" src="../../assets/img/send.png" (click)="sendAnswer()">
 </mat-form-field>
-<button mat-raised-button (click)="sendAnswer()">Post</button>

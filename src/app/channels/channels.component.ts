@@ -61,6 +61,9 @@ export class ChannelsComponent implements OnInit {
 
 
   openChannel(channelId) {
+    if (this.threadService.open) {
+      this.threadService.open = false;
+    }
     this.router.navigateByUrl('/channel/' + channelId);
     this.channels.message = [];
     this.firestore
