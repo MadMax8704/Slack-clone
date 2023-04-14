@@ -3,6 +3,7 @@ export class Thread {
     public userName: string [] = [];
     public userPhoto: string [] = [];
     public userEmail: string [] = [];
+    public messagetime = [];
     constructor() {
     }
 
@@ -11,7 +12,8 @@ export class Thread {
             message: this.message,
             userName: this.userName,
             userPhoto: this.userPhoto,
-            userEmail: this.userEmail
+            userEmail: this.userEmail,
+            messagetime: this.messagetime
         };
     }
 }
