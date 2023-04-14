@@ -29,6 +29,7 @@ export class MessageBoxComponent implements OnInit {
           this.channels.message = channels.message;
           this.channels.userName = channels.userName;
           this.channels.userPhoto = channels.userPhoto;
+          this.channels.userEmail = channels.userEmail;
         })
     })
   }

@@ -17,6 +17,7 @@ export class ThreadService {
   public message;
   public userName;
   public userPhoto;
+  public userEmail;
   public threadIds;
 
   open = false;
@@ -40,18 +41,21 @@ export class ThreadService {
             this.message = thread.message;
             this.userName = thread.userName;
             this.userPhoto = thread.userPhoto;
+            this.userEmail = thread.userEmail;
           })
       })
   }
 
 
-  makeThread(message, userName, userPhoto, channelId) {
+  makeThread(message, userName, userPhoto, userEmail ,channelId) {
     this.thread.message = [];
     this.thread.userName = [];
     this.thread.userPhoto = [];
+    this.thread.userEmail = [];
     this.thread.message.push(message);
     this.thread.userName.push(userName);
     this.thread.userPhoto.push(userPhoto);
+    this.thread.userEmail.push(userEmail);
     this.firestore
       .collection('threads')
       .add(this.thread.toJson())

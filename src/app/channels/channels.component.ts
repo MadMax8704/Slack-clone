@@ -36,7 +36,9 @@ export class ChannelsComponent implements OnInit {
           .then((info: any) => {
             this.channels.channelId = info.id;
             this.id = info.id;
+            this.threadService.open = false;
             this.updateChannel();
+            this.openChannel(this.id);
           })
       }
     })
@@ -61,9 +63,7 @@ export class ChannelsComponent implements OnInit {
 
 
   openChannel(channelId) {
-    if (this.threadService.open) {
-      this.threadService.open = false;
-    }
+    this.threadService.open = false;
     this.router.navigateByUrl('/channel/' + channelId);
     this.channels.message = [];
     this.firestore

@@ -34,10 +34,12 @@ export class MessageInputComponent implements OnInit {
             this.channels.message = channels.message;
             this.channels.userName = channels.userName;
             this.channels.userPhoto = channels.userPhoto;
+            this.channels.userEmail = channels.userEmail;
           } else {
             this.channels.message = [];
             this.channels.userName = [];
             this.channels.userPhoto = [];
+            this.channels.userEmail = [];
           }
         })
     })
@@ -49,11 +51,16 @@ export class MessageInputComponent implements OnInit {
     this.channels.message.push(this.message)
     this.channels.userName.push(this.authService.userData.displayName)
     this.channels.userPhoto.push(this.authService.userData.photoURL)
+    this.channels.userEmail.push(this.authService.userData.email)
     this.firestore
       .collection('channels')
       .doc(this.id)
       .update(this.channels.messageToJson())
-    this.threadService.makeThread(this.message, this.authService.userData.displayName, this.authService.userData.photoURL, this.id);
+    this.threadService.makeThread(this.message,
+      this.authService.userData.displayName,
+      this.authService.userData.photoURL,
+      this.authService.userData.email,
+      this.id);
     this.message = '';
   }
 }

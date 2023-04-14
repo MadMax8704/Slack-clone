@@ -4,6 +4,7 @@ export class Channels {
     public channelId: string[] = [];
     public userName: string[] = [];
     public userPhoto: string[] = [];
+    public userEmail: string[] = [];
     public threadMessage: string[] = [];
     public threadUserName: string[] = [];
     public threadUserPhoto: string[] = [];
@@ -26,7 +27,8 @@ export class Channels {
         return {
             message: this.message,
             userName: this.userName,
-            userPhoto: this.userPhoto
+            userPhoto: this.userPhoto,
+            userEmail: this.userEmail,
         };
     }
 
