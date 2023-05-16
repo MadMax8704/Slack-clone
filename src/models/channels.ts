@@ -5,7 +5,7 @@ export class Channels {
     public userName: string[] = [];
     public userPhoto: string[] = [];
     public userEmail: string[] = [];
-    public messagetime = [];
+    public messagetime :Date[] = [];
     public threadMessage: string[] = [];
     public threadUserName: string[] = [];
     public threadUserPhoto: string[] = [];

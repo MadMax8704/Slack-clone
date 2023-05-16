@@ -21,7 +21,7 @@ export class MessageInputComponent implements OnInit {
   public thread: Thread = new Thread;
   message = '';
   uid = '';
-  currentTime:Date;
+  currentTime;
 
   ngOnInit(): void {
     this.route.params.subscribe((params: any) => {
@@ -36,11 +36,13 @@ export class MessageInputComponent implements OnInit {
             this.channels.userName = channels.userName;
             this.channels.userPhoto = channels.userPhoto;
             this.channels.userEmail = channels.userEmail;
+            this.channels.messagetime = channels.messagetime;
           } else {
             this.channels.message = [];
             this.channels.userName = [];
             this.channels.userPhoto = [];
             this.channels.userEmail = [];
+            this.channels.messagetime = [];
           }
         })
     })
@@ -54,7 +56,7 @@ export class MessageInputComponent implements OnInit {
     this.channels.userPhoto.push(this.authService.userData.photoURL)
     this.channels.userEmail.push(this.authService.userData.email)
     this.currentTime = new Date();
-    this.channels.messagetime.push(this.currentTime)
+    this.channels.messagetime.push(this.currentTime.toLocaleString());
     this.firestore
       .collection('channels')
       .doc(this.id)

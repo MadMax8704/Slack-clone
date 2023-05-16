@@ -15,7 +15,7 @@ export class MessageBoxComponent implements OnInit {
 
   id = '';
   public channels: Channels = new Channels;
-
+  
 
 
   ngOnInit(): void {
@@ -30,6 +30,8 @@ export class MessageBoxComponent implements OnInit {
           this.channels.userName = channels.userName;
           this.channels.userPhoto = channels.userPhoto;
           this.channels.userEmail = channels.userEmail;
+          this.channels.messagetime = channels.messagetime;
+          this.channels.messagetime.toString();
         })
     })
   }
